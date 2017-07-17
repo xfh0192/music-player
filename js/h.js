@@ -1,5 +1,9 @@
 var $h = {};
 
+$h.localDebug = function(){
+	return false;
+};
+
 $h.home = function(){
 	var host = window.location.host;
 	var protocol = window.location.protocol;
