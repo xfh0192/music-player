@@ -76,7 +76,8 @@ function($stateProvider, $urlRouterProvider){
 			id: 1,
 			name: "last surprise",
 			author: "目黒将司",
-			url: $h.home() + "/song/library-1.mp3",
+			//url: $h.home() + "/song/library-1.mp3",
+			url: "http://mp3.flash127.com/music/12621.mp3",
 			//surface: $h.home() + "/image/surface-1.jpg"
 			surface: "http://p1.music.126.net/wtTX_YSIbw7dYXXihlANCQ==/18642219650656143.jpg?param=130y130"
 		},
