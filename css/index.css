@@ -1,0 +1,425 @@
+
+/*
+	https://github.com/amfe/article/issues/17
+	ionic对于尺寸是写死的。即默认dpr=1才好布局，然而这样做对于适配来说问题比较大
+	所以meta的viewport通过flexible.js来动态写入，以便动态生成dpr和根font-size
+	相应的需要修改ionic的默认样式
+	17/7/7 还没研究好sass，简单点全部用rem尺寸
+*/
+
+/* 通用或当做demo */
+div, h1, h2, button, p, i, a, label{
+	font-size: 0.4rem;
+	/*font-size: 12px;*/
+}
+[data-dpr="2"] div, h1, h2, button, p, i, a, label{
+	/*font-size: 24px;*/
+}
+[data-dpr="3"] div, h1, h2, button, p, i, a, label{
+	/*font-size: 45px;*/
+}
+
+/* 具体清洗ionic样式，主要针对不同dpr下的字体大小（px），ionic写死了巨恶心 */
+#index h1, #index .bar.bar-subheader a{
+	/*font-size: 12px;*/
+	font-size: 0.4rem;
+}
+[data-dpr="2"] #index h1, #index .bar.bar-subheader a{
+	/*font-size: 24px;*/
+}
+[data-dpr="3"] #index h1, #index .bar.bar-subheader a{
+	/*font-size: 37px;*/
+}
+#index .bar.bar-subheader a{
+	font-size: 0.4rem;
+	/*font-size: 12px;*/
+}
+[data-dpr="2"] #index .bar.bar-subheader a{
+	/*font-size: 24px;*/
+}
+[data-dpr="3"] #index .bar.bar-subheader a{
+	/*font-size: 44px;*/
+}
+.bar .title.title-left{
+	text-align: center;
+}
+
+
+
+html, body{
+	max-width: 550px;
+	height: 100%;
+	margin: 0 auto;
+    box-shadow: 0 0 10px #666;
+    overflow: hidden;
+}
+#index{
+	background: #f7f7f7;
+}
+/* main-hearder */
+#index .bar.bar-header{
+	height: 1.2rem;
+	z-index: 15;
+	display: flex;
+}
+#index ion-header-bar button{
+    flex: 1 0 1rem;
+}
+#index h1{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    flex: 1 0 8rem;
+    text-align: center;
+}
+#index h1, #index h1 i{
+	color: #ccc;
+}
+#index h1 i{
+	position: relative;
+	top: 10%;
+}
+#index h1::after{
+    content: "";
+    position: absolute;
+    width: 98%;
+    height: .7rem;
+    background: #fff;
+    border-radius: 5px;
+    left: .1rem;
+    top: 23%;
+    z-index: -1;
+}
+
+/*  sub-header */
+#index .bar.bar-subheader{
+	height: 1rem;
+	line-height: 1rem;
+	top: 1.2rem;
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	z-index: 10;
+}
+#index .bar.bar-subheader a{
+	flex: 1;
+	text-align: center;
+	color: #666;
+}
+
+/* content-slides */
+#index #content-slides{
+	position: absolute;
+	z-index: 11;
+}
+#index #content-slides>div>div.swiper-pagination-clickable{
+	top: 1.2rem;
+    bottom: inherit;
+    height: 1rem;
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+#index #content-slides>div>div.swiper-pagination-clickable>span{
+    flex: 1 0 auto;
+    height: 100%;
+    z-index: 100;
+    background: #fff;
+}
+
+/* footer-nav */
+#footer-nav-bar{
+    height: 1.5rem;
+    border-top: 1px solid #ccc;
+    display: flex;
+}
+#footer-nav-bar button{
+	flex: 1 0 auto;
+	/*font-size: 12px;*/
+	font-size: 0.3rem;
+	background: #fff;
+	border: 0;
+}
+#footer-nav-bar button:last-child{
+	position: relative;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+#footer-nav-bar button i{
+	display: block;
+	margin-bottom: 0.1rem;
+	font-size: .7rem;
+}
+
+/* index page */
+#index ion-content{
+	top: 2.2rem;
+	bottom: 1.5rem;
+}
+/* index page-1 */
+#index #page-1 ion-slides{
+	height: 5rem;
+}
+#index #page-1 ion-slides .swiper-slide img{
+	width: 10rem;
+}
+#index #page-1 ion-slides .swiper-container-horizontal > .swiper-pagination{
+	bottom: .6rem;
+}
+
+#index #page-1 ul.daily-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.3rem;
+}
+#index #page-1 ul.daily-nav li{
+	flex: 1;
+    text-align: center;
+    position: relative;
+}
+#index #page-1 ul.daily-nav li a{
+	position: absolute;
+	top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#index #page-1 ul.daily-nav li i{
+    border: 1px solid #666;
+    display: block;
+    width: 1.7rem;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    border-radius: 1rem;
+    margin: 0 auto 0.2rem;
+}
+#index #page-1 ul.daily-nav li:nth-child(1) i{
+	font-size: 1.4rem;
+}
+#index #page-1 ul.daily-nav li:nth-child(2) i{
+	font-size: 1rem;
+	position: relative;
+	line-height: 1.5rem;
+}
+#index #page-1 ul.daily-nav li:nth-child(3) i{
+	font-size: 1rem;
+}
+#index #page-1 ul.daily-nav li label{
+	font-size: 0.4rem;
+	/*font-size: 12px;*/
+}
+/*[data-dpr="2"] #index #page-1 ul.daily-nav li label{
+	font-size: 24px;
+}
+[data-dpr="3"] #index #page-1 ul.daily-nav li label{
+	font-size: 45px;
+}*/
+#index #page-1 .floor-title{
+	line-height: 1rem;
+	border-left: .1rem solid #ef0c0c;
+	padding-left: .2rem;
+}
+#index #page-1 .floor{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+}
+#index #page-1 .floor dd{
+	flex: 1 0 3rem;
+	margin: 0 .1rem 0.4rem 0;
+}
+#index #page-1 .floor dd:nth-child(3n){
+	margin-right: 0;
+}
+#index #page-1 .floor dd img{
+	width: 100%;
+}
+#index #page-1 .floor dd p{
+	font-size: 0.3rem;
+	/*font-size: 12px;*/
+	margin: .2rem auto 0;
+	width: 90%;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+/*[data-dpr="2"] #index #page-1 .floor dd p{
+	font-size: 24px;
+}
+[data-dpr="3"] #index #page-1 .floor dd p{
+	font-size: 36px;
+}*/
+
+/* index page-2 */
+#index #page-2{}
+#index #page-2 div.head-edition{
+	background: -webkit-gradient(linear, 0 0, 70% 100%,from(#7d7a70), to(#905c2d));
+	position: relative;
+	padding: .3rem .2rem .3rem 3.2rem;
+	height: 3.2rem;
+	overflow: hidden;
+	color: #fff;
+}
+#index #page-2 div.head-edition img{
+	position: absolute;
+	top: .4rem;
+	left: .4rem;
+	width: 2.5rem;
+	height: 2.5rem;
+}
+#index #page-2 div.head-edition h2{
+	color: #fff;
+	font-size: 60px;
+	margin-bottom: .2rem;
+}
+#index #page-2 div.head-edition h2 i{
+	color: #fff;
+}
+#index #page-2 div.head-edition h2 i.icon-crown{
+	border: 2px solid #e6b384;
+    border-radius: 46%;
+    color: #e6b384;
+    background: #bb7a3e;
+    margin-right: .1rem;
+    padding: 0 5px;
+}
+#index #page-2 div.head-edition h3{
+	color: #fff;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 53px;
+}
+#index #page-2 div.head-edition p{
+	color: #ccc;
+	font-size: 39px;
+	margin-top: .2rem;
+}
+#index #page-2 h2.floor-title{
+	margin: .4rem 0;
+	overflow: hidden;
+}
+#index #page-2 h2.floor-title>span{
+	float: left;
+}
+#index #page-2 h2.floor-title>ul{
+	float: right;
+}
+#index #page-2 h2.floor-title>ul li{
+	display: inline-block;
+}
+#index #page-2 dl.floor{
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-flow: row wrap;
+
+}
+#index #page-2 dl.floor dd{
+	flex: 1 0 4.9rem;
+}
+#index #page-2 dl.floor dd img{
+	width: 100%;
+}
+#index #page-2 dl.floor dd:nth-child(2n+1){
+	margin-right: .2rem;
+}
+
+
+/* player */
+#player{}
+#player .bg{
+	position: fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left: 0;
+	z-index: -1;
+	background: url("/image/surface-2.jpg") 50% no-repeat;
+	background-size: cover;
+	filter: blur(15px);
+	-webkit-filter: blur(15px);
+	opacity: .5;
+	transition: all .3s;
+}
+#player ion-header-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 1.2rem;
+    background: rgba(245, 243, 243, 0.6);
+}
+#player ion-header-bar button{
+	background: transparent;
+	border-color: transparent;
+}
+#player ion-header-bar h2{
+	/* display: flex; */
+	/* flex-flow: column wrap; */
+	text-align: center;
+	font-size: .5rem;
+	padding: .1rem 0 0;
+}
+#player ion-header-bar h2 span{
+	font-size: .4rem;
+	display: block;
+}
+#player ion-content{
+	top: 1.2rem;
+}
+#player div.floor{
+	/* height: 12rem; */
+}
+#player .floor>div.disc{
+	width: 100%;
+	height: 10.5rem;
+	text-align: center;
+	vertical-align: middle;
+}
+#player .floor>div.disc>div{
+	position: relative;
+	height: 100%;
+}
+#player .floor>div.disc>div span{
+    background: url(../image/coverall.png) no-repeat;
+    height: 6rem;
+    width: 6rem;
+    background-size: 11.2rem;
+    background-position: -4.2rem -17.1rem;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -3rem;
+    margin-top: -3rem;
+}
+#player .floor>div.disc>div img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 4rem;
+	height: 4rem;
+	margin: -2rem 0 0 -2rem;
+}
+#player .floor>ul{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+	width: 8rem;
+	margin: 0 auto;
+}
+#player .floor>ul li{
+	flex: 1 0 auto;
+	text-align: center;
+}
+#player .floor>ul li i{
+	
+}

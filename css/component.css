@@ -1,0 +1,166 @@
+#vertical-slides{
+	padding: 0 2.2rem 0 1rem;
+}
+#vertical-slides img{
+	position: absolute;
+	left: 0.5rem;
+	top: 0;
+	width: 2rem;	
+	overflow: hidden;
+}
+#vertical-slides ul{}
+#vertical-slides label{}
+
+/* player */
+#music-player{
+	position: relative;
+	background: rgba(255, 255, 255, 0.5);
+}
+#music-player audio{
+	display: none;
+}
+#music-player div.progress{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: stretch;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: .2rem;
+}
+#music-player div.progress .playing-time,
+#music-player div.progress .length{
+	flex: 1;
+	text-align: center;
+}
+#music-player div.progress .progress-bar{
+	display: inline-block;
+	flex: 3.5;
+	height: 0.2rem;
+	background: #eee;
+	position: relative;
+	top: 45%;
+	border-radius: 5px;
+}
+#music-player div.progress .progress-bar b.playing-bar{
+	display: block;
+	position: relative;
+	left: 0;
+	top: 0;
+	background: #39c;
+	width: 0;
+	height: 100%;
+	line-height: 100%;
+	z-index: 2;
+	transition: all 0.05s;
+	border-radius: 5px;
+}
+#music-player div.progress .progress-bar b.playing-bar i{
+	position: absolute;
+	top: -0.1rem;
+	right: -0.3rem;
+	/*margin-left: -0.3rem;*/
+}
+#music-player div.progress .progress-bar b.buffered-bar{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #ccc;
+	z-index: 1;
+	border-radius: 5px;
+}
+#music-player p.ctrl{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: stretch;
+	text-align: center;
+	height: 1.5rem;
+	line-height: 1.5rem;
+}
+#music-player p.ctrl i{
+	flex: 1 0 auto;
+	font-size: .7rem;
+}
+#music-player p.ctrl i.icon-iconbofangqibofang,
+#music-player p.ctrl i.icon-iconbofangqizanting{
+	font-size: 1rem;
+}
+
+#volume-ctrl{
+	display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+#volume-ctrl>i{
+    flex: 1;
+    text-align: right;
+    position: relative;
+    top: 0.05rem;
+}
+#volume-ctrl>span{
+	text-align: left;
+	flex: 1;
+}
+#volume-ctrl p{
+	height: 0.2rem;
+	/* width: 8rem; */
+	flex: 5;
+	background: #eee;
+	margin: 0.5rem 0.2rem;
+	position: relative;
+	border-radius: 5px;
+}
+#volume-ctrl p b{
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background: #39c;
+    border-radius: 5px;
+}
+#volume-ctrl p b i{
+	position: absolute;
+	 top: -0.25rem; 
+	right: -0.3rem;
+}
+
+/* loading */
+#loading{
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100000;
+    background: rgba(255, 255, 255, 0);
+        transform: translateZ(2000px);
+        -webkit-transform: translateZ(2000px);
+}
+#loading>p{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    line-height: 4rem;
+    text-align: center;
+    margin: -1.5rem 0 0 -1.5rem;
+    background: rgba(102, 102, 102, 0.7);
+    border-radius: .1rem;
+}
+#loading>p i{
+    font-size: 1.1rem;
+    color: #eee;
+    position: relative;
+    top: -0.3rem;
+}
+#loading>p b{
+	display: none;
+}
