@@ -7,9 +7,9 @@ $h.home = function(){
 	/*if(window.location.href.indexOf(returnUrl + "/" + $h.ngAppName) < 0){
 		returnUrl = returnUrl + "/" + $h.ngAppName;
 	}*/
-	/*if(window.location.href.indexOf("git") >= 0){
+	if(window.location.href.indexOf("git") >= 0){
 		returnUrl = returnUrl + "/" + $h.ngAppName;
-	}*/
+	}
 	return returnUrl;
 }
 
