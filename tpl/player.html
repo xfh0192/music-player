@@ -1,7 +1,7 @@
 
 <div id="player" ng-controller="playerCtrl">
 	<div class="bg">
-		<img ng-src="{{discImage}}" data-label="{{discImage}}"/>
+		<img ng-src="{{discImage}}"/>
 	</div><!-- 为了使背景图半透明，用div包装着调整opacity -->
 	<header>
 		<div>
@@ -22,7 +22,7 @@
 		<div>
 			<volume-ctrl volume="volume"></volume-ctrl>
 			<div class="disc-and-lyric">
-				<disc disc-image="{{discImage}}" data-label="{{discImage}}"></disc>
+				<disc disc-image="{{discImage}}"></disc>
 				<ul>
 					<li>
 						<a href="">
