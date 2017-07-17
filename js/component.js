@@ -67,8 +67,6 @@ angular.module($h.ngAppName)
 				scope.playingSong = playingSong;
 				setTimeout(function(){			//在手机端上，必须触发load才会有canplay了（坑
 					audio._load();				//而且必须setTimeout改变顺序，感觉load事件会很早触发
-					var loading = document.querySelector("#loading");
-					document.body.removeChild(loading);
 				}, 0)
 				
 			})
@@ -99,9 +97,9 @@ angular.module($h.ngAppName)
 			})
 
 			//假如要等待加载就加loading
-			audio.addEventListener("loadedmetadata", function(){
+			/*audio.addEventListener("loadedmetadata", function(){
 				_loading = uiFunction.loading();	//加loading
-			})
+			})*/
 			//监听播放器页面中的切歌事件
 			//监听是否可用，成功加载就设定歌曲长度和开始播放
 			//audio需要监听canplay这个事件，才可以获取到音频长度
