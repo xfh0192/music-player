@@ -1,4 +1,4 @@
-$h.ngAppName = "ionic-test";
+$h.ngAppName = "music-player";
 
 angular.module($h.ngAppName, ["ui.router", "ngAnimate"])
 
