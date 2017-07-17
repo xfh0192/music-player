@@ -31,7 +31,7 @@
 	<body ng-app="music-player">
 		<div ui-view></div>
 
-		<div id="player-include" ng-include="$h.home() + '/tpl/player.html'" ng-class="{'enter': playerActived, 'leave': !playerActived}"></div>
+		<div id="player-include" ng-include="home() + '/tpl/player.html'" ng-class="{'enter': playerActived, 'leave': !playerActived}"></div>
 	</body>
 </html>
 
