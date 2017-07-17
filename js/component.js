@@ -67,6 +67,8 @@ angular.module($h.ngAppName)
 				scope.playingSong = playingSong;
 				setTimeout(function(){			//在手机端上，必须触发load才会有canplay了（坑
 					audio._load();				//而且必须setTimeout改变顺序，感觉load事件会很早触发
+					var loading = document.querySelector("#loading");
+					document.body.removeChild(loading);
 				}, 0)
 				
 			})
@@ -111,6 +113,7 @@ angular.module($h.ngAppName)
 					_loading = null;
 				}
 				//上面的钩子函数，_loading一直是undefined触发不了，强行清除loading。。。。
+				//主要是因为这个是匿名函数，this指针
 				var loading = document.querySelector("#loading");
 				if(loading){
 					loading.parentNode.removeChild(loading);
