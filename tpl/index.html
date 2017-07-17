@@ -1,0 +1,33 @@
+<div ng-controller="indexCtrl" id="index">
+	
+	<!-- 头部 -->
+	<header>
+		<div>
+			<button class="button">
+				<!-- <i class="iconfont icon-microphoneicon"></i> -->
+			</button>
+			<h1>
+				<!-- <i class="iconfont icon-fangdajing"></i>
+				搜索音乐、歌词、电台 -->
+				云音乐
+			</h1>
+			<button class="button" ng-click="openPlayer($event)">
+				<i class="iconfont icon-zhengzaibofang"></i>
+			</button>
+		</div>
+		<div class="sub">
+			<a ng-click="changeTab('index.main')" ng-class="{'actived': stateName == 'index.main'}">
+				个性推荐
+			</a>
+			<a ng-click="changeTab('index.collection')" ng-class="{'actived': stateName == 'index.collection'}">
+				我的音乐
+			</a>
+			<a ng-click="changeTab('index.account')" ng-class="{'actived': stateName == 'index.account'}">
+				个人账户
+			</a>
+		</div>
+	</header>
+
+	<div ui-view></div>
+</div>
+

@@ -1,0 +1,14 @@
+<div id="vertical-slides">
+	<img src="{{head-img}}">
+	<ul>
+		<li ng-repeat="row in slides">
+			<a ui-sref="{{row.state}}">
+				<i class="iconfont {{row.icon}}"></i>
+				{{row.text}}
+			</a>
+		</li>
+	</ul>
+	<label>
+		更多
+	</label>
+</div>

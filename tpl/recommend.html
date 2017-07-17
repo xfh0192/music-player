@@ -1,0 +1,25 @@
+<div id="recommend">
+	<header>
+		<i class="iconfont icon-back back" ui-sref="index.main"></i>
+		<i class="iconfont icon-zhengzaibofang playing" ng-click="toPlayer()"></i>
+		<div class="bg" ng-style="bgStyle"></div>
+		<div>
+			<img ng-src="{{::bean.img}}"/>
+			<h3>
+				{{::bean.title}}
+			</h3>
+		</div>
+	</header>
+	<div class="content">
+		<ul>
+			<li ng-repeat="row in bean.songList" ng-class="{'playing': playingSong.name == row.name}"
+				ng-click="addToCollection(row)">
+				<i class="iconfont icon-yinliang" ng-if="playingSong.name == row.name"></i>
+				<span ng-if="playingSong.name != row.name">
+					{{::$index + 1}}.&nbsp;
+				</span>
+				{{::row.name}}
+			</li>
+		</ul>
+	</div>
+</div>

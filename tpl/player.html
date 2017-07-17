@@ -1,0 +1,52 @@
+
+<div id="player" ng-controller="playerCtrl">
+	<div class="bg">
+		<img ng-src="{{discImage}}"/>
+	</div><!-- 为了使背景图半透明，用div包装着调整opacity -->
+	<header>
+		<div>
+			<button class="back" ng-click="hide()">
+		 		<i class="iconfont icon-back"></i>
+		 	</button>
+		 	<h2>
+		 		{{playingSong.name}}
+		 		<span>{{playingSong.author}}</span>
+		 	</h2>
+		 	<button ng-click="$recommend = !$recommend">
+		 		<i class="iconfont" ng-class="{'icon-recommend': !!!$recommend, 'icon-iconfontpraise': !!$recommend}"></i>
+		 	</button>
+		</div>
+	</header>
+
+	<div class="content">
+		<div>
+			<volume-ctrl volume="volume"></volume-ctrl>
+			<div class="disc-and-lyric">
+				<disc disc-image="{{discImage}}"></disc>
+				<ul>
+					<li>
+						<a href="">
+							<i class="iconfont icon-shoucang"></i>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="iconfont icon-xiazai4"></i>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="iconfont icon-pinglun"></i>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<i class="iconfont icon-icon"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<player volume="volume"></player>
+		</div>
+	</div>
+</div>

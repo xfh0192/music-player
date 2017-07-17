@@ -1,0 +1,15 @@
+<div id="collection" class="{{stateName}}">
+	<ul>
+		<li ng-repeat="row in list track by $index">
+		<!-- http://blog.csdn.net/u010552788/article/details/51433810 -->
+			<h3 ng-class="{'playing': row.id == playingSong.id}" ng-click="play(row, $index)">
+				<!-- 一次绑定减少监听 -->
+				<!-- {{::$index + 1}}.&nbsp;{{::row.name}} -->
+				<i class="iconfont icon-yinliang" ng-if="row.id == playingSong.id"></i>
+				<span ng-if="row.id != playingSong.id">{{$index + 1}}.</span>
+				&nbsp;{{row.name}}
+			</h3>
+			<i class="iconfont icon-trash" ng-click="remove($index)"></i>
+		</li>
+	</ul>
+</div>

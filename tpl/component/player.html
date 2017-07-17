@@ -1,0 +1,23 @@
+<div id="music-player">	
+	<div class="progress">
+		<span class="playing-time">{{currentTime | timeCountFormat}}</span>
+		<p class="progress-bar">
+			<b class="playing-bar">
+				<i class="iconfont icon-icon2"></i>
+			</b>
+			<b class="buffered-bar"></b>
+		</p>
+		<span class="length">{{length | timeCountFormat}}</span>
+	</div>
+	<p class="ctrl">
+		<!-- <i class="iconfont icon-single"></i> -->
+		<i class="iconfont icon-prev" ng-click="changeSong($event, 'previous')"></i>
+		<i class="iconfont icon-iconbofangqizanting" ng-if="!$playing" ng-click="play($event)"></i>
+		<i class="iconfont icon-iconbofangqibofang" ng-if="$playing" ng-click="pause($event)"></i>
+		<i class="iconfont icon-next" ng-click="changeSong($event, 'next')"></i>
+		<!-- <i class="iconfont icon-bofangliebiao-copy"></i> -->
+	</p>
+	<audio controls="controls"><!-- ng-src="{{(playingSong.url || '') | trustUrl}}" -->
+		<source ng-src="{{(playingSong.url || '') | trustUrl}}" type="audio/mp3">
+	</audio>
+</div>

@@ -1,0 +1,35 @@
+<!-- 第一页 -->
+<div id="main" class="{{stateName}}">
+	<ul id="slides">
+		<li>
+			<img ng-src="{{showConfig.indexSlideImgs[0].img | trustUrl}}"/>
+		</li>
+	</ul>
+
+	<ul class="daily-nav">
+		<li>
+			<a ui-sref="recommend({id: 1})"></a>
+			<i class="iconfont icon-leguansirendiantai"></i>
+			<label>私人FM</label>
+		</li>
+		<li>
+			<a ui-sref="recommend({id: 2})"></a>
+			<i class="iconfont icon-rili"></i>
+			<label>每日歌曲推荐</label>
+		</li>
+		<li>
+			<a ui-sref="recommend({id: 3})"></a>
+			<i class="iconfont icon-iconfontpaixingbang2"></i>
+			<label>云音乐热歌榜</label>
+		</li>
+	</ul>
+
+	<h2 class="floor-title">推荐歌单</h2>
+	<dl class="floor">
+		<dd ng-repeat="row in showConfig.recommend">
+			<a ui-sref="recommend({id: row.id})" title="{{row.title}}"></a>
+			<img ng-src="{{row.img}}"/>
+			<p>{{row.title}}</p>
+		</dd>
+	</dl>
+</div>
