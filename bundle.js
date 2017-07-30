@@ -13705,7 +13705,7 @@ if (false) {(function () {
 	name: 'account',
 	data: function () {
 		return {
-			headImg: "/image/default-head.jpg"
+			headImg: "./image/default-head.jpg"
 		};
 	}
 });
