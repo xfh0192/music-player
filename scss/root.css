@@ -1,0 +1,31 @@
+/*
+	css reset  
+	http://blog.csdn.net/pengpengpeng85/article/details/52070583 sina
+*/
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div{margin:0;padding:0;border:0;} 
+body{background:#fff;color:#333;font-size:12px; font-family:"SimSun","宋体","Arial Narrow";} 
+
+ul,ol{list-style-type:none;} 
+select,input,img,select{vertical-align:middle;} 
+
+a{text-decoration:none;} 
+a:link{color:#009;} 
+/*a:visited{color:#800080;} */
+a:hover,a:active,a:focus{text-decoration:none!important;} 
+table { border-collapse: collapse; border-spacing: 0; }
+
+i.iconfont{font-size: 0.6rem;/*line-height: 32px;padding: 2px;*/ color: #333;}
+[data-dpr="2"] i.iconfont{/*font-size: 39px;*//*line-height: 32px;padding: 2px;*/}
+[data-dpr="3"] i.iconfont{    
+	/*font-size: 66px;*/
+    /*line-height: 110px;
+    padding: 6px;*/
+}
+
+html, body{
+	height: 100%;
+	width: 100%;
+    box-shadow: 0 0 10px #666;
+    overflow: hidden;
+    font-family: microsoft yahei;
+}
