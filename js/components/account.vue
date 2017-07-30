@@ -49,7 +49,7 @@ export default {
 	name: 'account',
 	data: function(){
 		return {
-			headImg: "/image/default-head.jpg"
+			headImg: "./image/default-head.jpg"
 		}
 	}
 }
