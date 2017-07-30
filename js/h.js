@@ -1,7 +1,11 @@
 var $h = {};
 
-$h.localDebug = function(){
-	return false;
+$h.navigator = function(){
+	if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+	    return "mobile";
+	} else {
+	    return "computer";
+	}
 };
 
 $h.home = function(){
@@ -15,31 +19,6 @@ $h.home = function(){
 		returnUrl = returnUrl + "/" + $h.ngAppName;
 	}
 	return returnUrl;
-}
-
-
-
-$h.extendRootScope = function($rootScope){
-
-	$rootScope.listen = function(broadcast, fn){
-		this.$on("here-is-a-message", function(event, data){
-			console.log("get a message: " + data.broadcast);
-			if(broadcast == data.broadcast){
-				fn(event, data.data);
-			}
-		})
-	}
-	$rootScope.report = function(broadcast, data){
-		this.$emit("here-is-a-report", {broadcast: broadcast, data: data});
-	}
-	$rootScope.$on("here-is-a-report", function(event, data){
-		console.log("get a report: " + data.broadcast);
-		$rootScope.$broadcast("here-is-a-message", data);
-	})
-
-	$rootScope.home = function(){
-		return $h.home();
-	}
 }
 
 /*转自【B5教程网】:http://www.bcty365.com/content-74-1347-1.html*/

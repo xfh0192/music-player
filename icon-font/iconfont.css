@@ -1,10 +1,10 @@
 
 @font-face {font-family: "iconfont";
-  src: url('iconfont.eot?t=1500199234337'); /* IE9*/
-  src: url('iconfont.eot?t=1500199234337#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('iconfont.woff?t=1500199234337') format('woff'), /* chrome, firefox */
-  url('iconfont.ttf?t=1500199234337') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('iconfont.svg?t=1500199234337#iconfont') format('svg'); /* iOS 4.1- */
+  src: url('iconfont.eot?t=1501407800004'); /* IE9*/
+  src: url('iconfont.eot?t=1501407800004#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1501407800004') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1501407800004') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1501407800004#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .iconfont {
@@ -34,6 +34,8 @@
 .icon-shopping:before { content: "\e628"; }
 
 .icon-location:before { content: "\e602"; }
+
+.icon-headphones:before { content: "\e71b"; }
 
 .icon-icon2:before { content: "\e605"; }
 
