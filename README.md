@@ -7,11 +7,12 @@
 这次用vue写的，也参考了一些demo<br />
 1、使用vue2.0开发，vue-router作为路由，vuex控制组件间的状态同步<br />
 2、使用flexible进行适配，flex布局，页面横向切入切出使用transition和animate<br />
-3、播放器使用了audio标签<br />
-4、css方面研究了sass，使用最基本的嵌套写法，很方便修改<br />
-5、使用express在自己机子简单配置了服务器（纯粹跑起来，还没有开始写接口），顺便研究使用了webpack进行打包<br />
-6、看了一些es6的写法（箭头函数、promise等），觉得promise太棒了而且用法和ng的promise几乎一样（之前对ng的promise较为熟悉了）<br />
-7、简单使用localstorage存储了一下歌曲数据（localstorage只能存为json字符串）<br />
+3、交互方面：封装了方法，在播放器页和推荐列表两个页面右划可以切出。播放器中的播放进度条可以拖动（手机上面好像会有点迟钝，怕是重绘太严重。？）<br />
+4、播放器使用了audio标签<br />
+5、css方面研究了sass，使用最基本的嵌套写法，很方便修改<br />
+6、使用express在自己机子简单配置了服务器（纯粹跑起来，还没有开始写接口），顺便研究使用了webpack进行打包<br />
+7、看了一些es6的写法（箭头函数、promise等），觉得promise太棒了而且用法和ng的promise几乎一样（之前对ng的promise较为熟悉了）<br />
+8、简单使用localstorage存储了一下歌曲数据（localstorage只能存为json字符串）<br />
 <br />
 <br />
 <br />
