@@ -2,8 +2,8 @@
 <br />
 <br />
 2017/07/31<br />
-个人写的音乐播放器3.0.0（vue、vue-router、vuex、flexible、h5/css3、localstorage、es6、express、webpack、sass）/n<br />
-上一版用的ng，发现还是得赶紧更新技术栈，咬牙狠狠啃了一波教程/n<br />
+个人写的音乐播放器3.0.0（vue、vue-router、vuex、flexible、h5/css3、localstorage、es6、express、webpack、sass）<br />
+上一版用的ng，发现还是得赶紧更新技术栈，咬牙狠狠啃了一波教程<br />
 这次用vue写的，也参考了一些demo<br />
 1、使用vue2.0开发，vue-router作为路由，vuex控制组件间的状态同步<br />
 2、使用flexible进行适配，flex布局，页面横向切入切出使用transition和animate<br />
