@@ -1,8 +1,8 @@
 # music-player（移动端的，自己用ip6测试的）
 
 2017/07/31
-个人写的音乐播放器3.0.0（vue、vue-router、vuex、flexible、h5/css3、localstorage、es6、express、webpack、sass）
-上一版用的ng，发现还是得赶紧更新技术栈，咬牙狠狠啃了一波教程
+个人写的音乐播放器3.0.0（vue、vue-router、vuex、flexible、h5/css3、localstorage、es6、express、webpack、sass）/n
+上一版用的ng，发现还是得赶紧更新技术栈，咬牙狠狠啃了一波教程/n
 这次用vue写的，也参考了一些demo
 1、使用vue2.0开发，vue-router作为路由，vuex控制组件间的状态同步
 2、使用flexible进行适配，flex布局，页面横向切入切出使用transition和animate
