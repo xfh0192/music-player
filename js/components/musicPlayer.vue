@@ -2,7 +2,7 @@
 <div id="music-player">
 	<div class="progress">
 		<span class="playing-time">{{playingTime}}</span>
-		<p class="progress-bar" @touchstart.prevent="touchStart($event)" @touchmove.prevent="touchMove($event)" @touchend.prevent="touchEnd($event)">
+		<p class="progress-bar" @mousedown.prevent="touchStart($event)" @mouseup.prevent="touchEnd($event)">
 			<b class="playing-bar" v-bind:style="playingBarStyle">
 				<i class="iconfont icon-icon2 progress-ctrl-mark"></i>
 			</b>
@@ -30,7 +30,8 @@ export default {
 			songLength: "00:00",
 			playingBarWidth: 0,
 			progressTimer: {},
-			progressTimerFn: {}
+			progressTimerFn: {},
+			drag : false
 		}
 	},
 	computed: {
@@ -84,13 +85,20 @@ export default {
 		},
 		touchStart: function($event){
 			clearTimeout(this.progressTimer)
+			this.drag = true;
 		},
-		touchMove: function($event){
-			var touch = $event.targetTouches && $event.targetTouches[0] || $event;		//touchmove用targetTouches
-			var progressBarRect = this.progressBar.getBoundingClientRect();
-			this.playingBarWidth = touch.clientX - progressBarRect.left;
-		},
+		//touchMove: function($event){
+		//	if(!this.drag){
+		//		return;
+		//	}
+		//	var touch = $event.targetTouches && $event.targetTouches[0] || $event;		//touchmove用targetTouches
+		//	var progressBarRect = this.progressBar.getBoundingClientRect();
+		//	this.playingBarWidth = touch.clientX - progressBarRect.left;
+		//},
 		touchEnd: function($event){
+			if(!this.drag){
+				return;
+			}
 			var touch = $event.changedTouches && $event.changedTouches[0] || $event;		//touchend用changedTouches
 			var progressBarRect = this.progressBar.getBoundingClientRect();
 			this.playingBarWidth = touch.clientX - progressBarRect.left;
@@ -104,6 +112,8 @@ export default {
 				this.playingBarWidth = this.audio.currentTime / this.audio.duration * this.progressBar.clientWidth
 				this.progressTimer = setTimeout(this.progressTimerFn, 500)
 			}, 500)
+
+			this.drag = false;
 		},
 		timeFormat: (timeCount) => {
 			var second = parseInt(timeCount) || 0;
@@ -123,10 +133,10 @@ export default {
 		this.audio.addEventListener("canplay", () => {
 			console.log("canplay")
 											//不用这个默认开关了。。浏览器会先触发一次canplay，但是手机不会。。用不了
-			//if(this.$store.state.defaultPlaying){//this.$store.state.isPlaying && this.$store.state.defaultPlaying
+			if(this.$store.state.defaultPlaying){//this.$store.state.isPlaying && this.$store.state.defaultPlaying
 				this.audio.play()
-			//}
-			//this.$store.commit("closeDefaultPlaying")
+			}
+			this.$store.commit("closeDefaultPlaying")
 			this.songLength = this.timeFormat(this.audio.duration) || "00:00"
 		})
 		
