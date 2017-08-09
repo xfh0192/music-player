@@ -34,4 +34,4 @@ ps：tab菜单的第一第三页暂时没有功能，主要功夫花在了播放
 3、用angular作为框架，利用ui-router编写路由部分<br />
 4、播放器部分，封装为了指令<br />
 5、利用ng-animate和css3的animate属性，制作右侧切入效果<br />
-6、audio的src用的是qq音乐的外链123123123123123
+6、audio的src用的是qq音乐的外链
